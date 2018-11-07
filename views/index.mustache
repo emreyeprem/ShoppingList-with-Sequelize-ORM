@@ -1,0 +1,41 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="site.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+
+<body>
+  <h3 class="bg-dark text-white" id="heading">Shopping List</h3>
+  <nav class="navbar navbar-dark bg-primary">
+    <!-- Navbar content -->
+    <form action="add_store" method="POST">
+      <label>Enter store name :<input type="text" name="name" /></label>
+      <label>Enter store street :<input type="text" name="street" /></label>
+      <label>Enter store city :<input type="text" name="city" /></label>
+      <label>Enter store state :<input type="text" name="state" /></label>
+      <input class="btn btn-warning" type="submit" value="Add Store" />
+
+    </form>
+  </nav>
+  <div id="storesContainer">
+
+{{#storeList}}
+
+  <div class="card border-info mb-3" id="mainContainer" style="max-width: 20rem;">
+    <a href="/delete/{{id}}"><i class="fas fa-times" id="iconClosing"></i></a>
+    <div class="card-header"><h3 class="storeTitle">{{name}}</h3>
+    {{street}},{{city}},{{state}}
+    </div>
+    <div class="card-body text-info">
+      <h5 class="card-title"><label id="itemTextBox">Enter an item :</label><input type="text" name="item" />
+      <button type="button" class="btn btn-warning">Add</button></h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+  </div>
+{{/storeList}}
+
+</div>
+
+</body>
+</html>

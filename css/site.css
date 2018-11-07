@@ -1,0 +1,55 @@
+#heading{
+  text-align: center;
+  height: 7%;
+  padding-top: 5px;
+
+  bounce {
+    width: 100px;
+    padding: 20px;
+    background: gold;
+    position: relative;
+    animation: bounce 1s ease-in 2s 6 alternate none;
+  }
+  @keyframes bounce {
+    from {
+      right: 0px;
+      left: 0px;
+      }
+    to {
+      right: 300px;
+      left: 300px;
+    }
+  }
+
+  }
+/* ------------------------- */
+
+/* ------------------------- */
+
+label{
+  color: white;
+}
+.navbar{
+  margin-top: -10px;
+}
+#itemTextBox{
+  color:black;
+}
+.storeTitle{
+  text-align:center;
+}
+#mainContainer{
+  position:relative;
+  margin-top: 15px;
+  margin-left: 20px;
+  transform: scale(0.95);
+}
+#iconClosing{
+  position:absolute;
+  right:2.5;
+  top:1.5;
+}
+#storesContainer{
+  display: flex;
+  flex-wrap: wrap;
+}
