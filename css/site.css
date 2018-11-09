@@ -1,31 +1,22 @@
 #heading{
   text-align: center;
-  height: 7%;
-  padding-top: 5px;
-
-  bounce {
-    width: 100px;
-    padding: 20px;
-    background: gold;
-    position: relative;
-    animation: bounce 1s ease-in 2s 6 alternate none;
+  height: 10%;
+  padding-top: 2px;
+  display: flex;
+  flex-direction: row;
   }
-  @keyframes bounce {
-    from {
-      right: 0px;
-      left: 0px;
-      }
-    to {
-      right: 300px;
-      left: 300px;
-    }
-  }
-
-  }
-/* ------------------------- */
-
-/* ------------------------- */
-
+#btnLogout{
+  margin-top: 15%;
+}
+#greeting{
+  margin-left: 340px;
+  margin-top: 15px;
+  margin-right:5px;
+}
+#pageTitle{
+  align-self: center;
+  margin-left: 40%;
+}
 label{
   color: white;
 }
@@ -41,7 +32,7 @@ label{
 #mainContainer{
   position:relative;
   margin-top: 15px;
-  margin-left: 20px;
+  margin-left: 30px;
   transform: scale(0.95);
 }
 #iconClosing{
@@ -52,4 +43,7 @@ label{
 #storesContainer{
   display: flex;
   flex-wrap: wrap;
+}
+#pageTitle{
+  align-self: center;
 }

@@ -6,7 +6,11 @@
 </head>
 
 <body>
-  <h3 class="bg-dark text-white" id="heading">Shopping List</h3>
+  <div class="bg-dark text-white" id="heading">
+    <h1 id="pageTitle">Shopping List</h1>
+    <p id="greeting">Welcome {{username}}</p>
+<a href="/logout"><button id="btnLogout" class="btn btn-primary btn-sm">Logout</button></a>
+  </div>
   <nav class="navbar navbar-dark bg-primary">
     <!-- Navbar content -->
     <form action="add_store" method="POST">
@@ -17,6 +21,7 @@
       <input class="btn btn-warning" type="submit" value="Add Store" />
 
     </form>
+
   </nav>
   <div id="storesContainer">
 
@@ -28,9 +33,24 @@
     {{street}},{{city}},{{state}}
     </div>
     <div class="card-body text-info">
-      <h5 class="card-title"><label id="itemTextBox">Enter an item :</label><input type="text" name="item" />
-      <button type="button" class="btn btn-warning">Add</button></h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <form action="add_item" method="POST">
+
+      <h5 class="card-title"><label id="itemTextBox">Enter an item :</label>
+        <input type="text" name="item" />
+        <input type="hidden" name="storeId" value="{{id}}" />
+      <input class="btn btn-warning" type="submit" value="Add" />
+        </h5>
+    </form>
+
+      <p class="card-text">
+        {{#items}}
+
+          {{name}}
+          <a href="/deleteItem/{{id}}"><i class="fas fa-times" id="itemClosing"></i></a> &nbsp;&nbsp;&nbsp;
+
+        {{/items}}
+      </p>
+
     </div>
   </div>
 {{/storeList}}
