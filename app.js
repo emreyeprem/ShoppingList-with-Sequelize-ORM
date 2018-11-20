@@ -27,7 +27,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }))
-app.listen(3015,function(req,res){
+app.listen(3005,function(req,res){
   console.log("Server has started...")
 })
 // =========================== Middleware =================================
@@ -122,16 +122,29 @@ app.post('/signup',function(req,res){
   let username = req.body.username
   let password = req.body.password
   let email = req.body.email
+  // find if the username has already been registered
+  models.user.findOne({
+    where: {
+      username : username
+    }
+  }).then(function(user){
+    // this user with username already exists
+    if(user != null) { // this means that user exists
+      res.render('login', { message : 'Oppss!..Username is already taken.' })
+    } else {   // if username does not exist already in database
+      // save user in the database
+
   models.user.build({
     username:username,
     password:password,
     email:email
   }).save().then(function(){
     res.redirect('/login')
-  }).catch(function(error){
-    console.log(error)
-    alert(error)
   })
+  }
+  }).catch(function(error){
+      res.send(error)
+})
 })
 
 app.post('/login',function(req,res){
@@ -163,3 +176,4 @@ app.get('/logout',function(req,res){
     res.redirect('/login')
   }
 })
+// ---------------------------------------

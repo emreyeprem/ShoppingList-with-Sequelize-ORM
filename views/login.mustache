@@ -16,6 +16,9 @@
   <div id="title">
   <h1>Welcome to Shopping-Cart</h1>
   <h4 id="title2">Please sign up then create your shopping list</h4>
+  <p class="message">
+    {{message}}
+  </p>
   </div>
     <div id="mainDiv" class="main">
 
@@ -25,12 +28,12 @@
                 <div class="signin-content">
                     <div class="signin-image">
                         <figure><img src="/signup-image.png" alt="sing up image"></figure>
-                        <a href="#signupDiv" class="signup-image-link"><h4>Create an account</h4></a>
+                        <a href="#title3" class="signup-image-link"><h4>Create an account</h4></a>
                     </div>
 
                     <div class="signin-form">
                         <h2 class="form-title">Sign in</h2>
-                        <form action="login" method="POST" class="register-form" id="login-form">
+                        <form action="/login" method="POST" class="register-form" id="login-form">
                             <div class="form-group">
                                 <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="your_username" id="your_name" placeholder="Your Username"/>
@@ -59,6 +62,15 @@
 
 
         <!-- Sign up form -->
+
+        <div id="title3">
+        <h1>Welcome to Shopping-Cart</h1>
+        <h3 id="title4">Please sign up then create your shopping list</h3>
+        <p class="message">
+
+        </p>
+        </div>
+
         <section id="signupDiv" class="signup">
             <div class="container">
                 <div class="signup-content">

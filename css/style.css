@@ -601,7 +601,7 @@ label.valid {
 
 } */
 #signupDiv{
-  margin-top: 20%;
+  margin-top: 3%;
 }
 #signin{
   margin-top: -8.7%;
@@ -618,6 +618,11 @@ label.valid {
   margin-top: -1.4%;
   font-size: 18px;
 }
+.message{
+  margin-top: -1.4%;
+  font-size: 17px;
+  color: navy;
+}
 input[type="text"]{
   font-size: 20px;
 }
@@ -632,4 +637,8 @@ input[type="submit"]{
 }
 i{
   transform: scale(1.2);
+}
+#title3{
+  margin-top: 10%;
+  text-align: center;
 }
